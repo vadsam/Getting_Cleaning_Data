@@ -44,8 +44,8 @@ names(y_data) <- "activity"
 #merge all 3 datas sets into a single data frame
 combined_data <- cbind(x_mean_std, y_data, subject_data)
 
-# user plyr package to calcualte the mean for all variables per person per activity
-avrg_data <- ddply(combined_data,.(Volunteer, activity), function(x) colMeans(x[, 1:79]))
+# use plyr package to calcualte the mean for all variables per person per activity
+avrg_data <- ddply(combined_data,.(Volunteer, activity), function(x) colMeans(x[, 1:length(x_mean_std)]))
 
 # write the averages to an output file
 write.table(avrg_data, "Averages_Dataset.txt", row.name=FALSE)
