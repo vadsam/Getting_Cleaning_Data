@@ -1,4 +1,4 @@
-# this file contains to code to perform all steps described in the project definition
+# this file contains code to perform all steps described in the project definition
 
 # load dplyr package
 library(plyr)
